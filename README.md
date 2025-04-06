@@ -56,9 +56,6 @@ Le projet inclut des fonctionnalités telles que la sélection dynamique d'optio
 
 Voici un aperçu de la structure des dossiers du projet :
 
-```
-
-```
 4-ELEMENTS/
 │   .gitignore
 │   favicon.png
@@ -146,8 +143,6 @@ Voici un aperçu de la structure des dossiers du projet :
         hotel-feu.html
         hotel-terre.html
         reservation.html
-```
-```
 
 ## Auteurs
 
@@ -158,4 +153,4 @@ Voici un aperçu de la structure des dossiers du projet :
 Projet réalisé dans le cadre pédagogique de Webecom 2025. Non destiné à un usage commercial.
 
 
-```
+
