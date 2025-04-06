@@ -1,0 +1,35 @@
+@use "../abstracts/index" as *;
+
+
+footer{
+    background-color: $white;
+    padding: $spacing-low 0;
+
+    .flex-responsive{
+        margin: $spacing-high;
+        gap: 10rem;
+    }
+    .logo{
+        height: 6.4rem;
+    }
+
+    ul{
+        @include flex(column, start, space-between);
+        gap: $spacing-mid;
+    }
+
+    .social{
+        @include flex(row, center, flex-start);
+        gap: $spacing-mid;
+    }
+}
+
+
+@media (max-width: 900px) {
+    footer{
+        .flex-responsive{
+            margin: $spacing-high;
+            gap: $spacing-high;
+        }
+    }
+}

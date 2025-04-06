@@ -1,0 +1,63 @@
+@use "../abstracts/index" as *;
+
+
+.fire-page{
+    .activity , .services, .purchase, .testimonials{
+        img{
+            width: $icon-size;
+        }
+    }
+    .flex{
+        @include flex(row, center, flex-start);
+        gap: $spacing-high;
+    }
+
+    #timelapse-video{
+        width: 100%;
+        height: 54rem;
+        object-fit: cover;
+    }
+
+    .purchase{
+        .flex-responsive{
+            align-items: baseline;
+            gap: $spacing-high;
+        }
+        .image{
+            img{
+                width: 100%;
+                height: 49.2rem;
+                object-fit: cover;
+            }
+        }
+    }
+    .slider {
+        width: 100%;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        white-space: nowrap;
+        -ms-overflow-style: none; 
+        min-height: 15.2rem; 
+        .card-container {
+            display: flex;
+            min-width: max-content; 
+            height: 100%;
+            .box {
+                scroll-snap-align: start;
+                width: 40.8rem;
+                margin-right: $spacing-high;
+                img {
+                    width: 100%;
+                    height: 35rem;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+    p{
+        @include flex(row, center, flex-start);
+        gap: $spacing-low;
+        margin: $spacing-low 0;
+    }
+}
+

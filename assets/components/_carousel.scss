@@ -1,0 +1,33 @@
+@use "../abstracts/index" as *;
+
+.image-container {
+    @include flex(row, initial, initial);
+    gap: $spacing-mid;
+    transition: transform 0.5s ease-in-out;
+
+    img {
+        width: $image-lg-width;
+        height: $image-lg-height;
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+}
+   
+.anim {
+    overflow: hidden;
+    position: relative;
+}
+
+.water-anim .image-container,
+.air-anim .image-container {
+    flex-direction: row-reverse;
+}
+
+@media (max-width: 900px) { 
+    .image-container {
+        img {
+            width: $image-sm-width;
+            height: $image-sm-height;
+        }
+    }
+}

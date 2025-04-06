@@ -1,0 +1,69 @@
+@use "../abstracts/index" as *;
+
+.form-card {
+    margin: auto;
+    margin-bottom: $form-margin-bottom;
+    background-color: $tertiary;
+    border-radius: $border-radius;
+    padding: $form-padding;
+    max-width: 80rem;
+
+    h4 {
+        margin-bottom: $spacing-high;
+    }
+
+    .error-message {
+        color: $red;
+    }
+
+    fieldset {
+        padding: $spacing-low;
+        margin: $spacing-low 0;
+    }
+
+    label {
+        @include font($font-secondary-regular, $font-size-mid);
+    }
+
+    input,
+    select {
+        width: 100%;
+        padding: 0.8rem;
+        font-size: $spacing-low;
+        border-radius: $border-radius;
+        border: none;
+        outline: none;
+        background-color: $input;
+        @include font($font-secondary-regular, $font-size-mid);
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    .selectable-label {
+        display: inline-block;
+        padding: 0.8rem $spacing-mid;
+        background-color: $bg;
+        border: 2px solid $tertiary;
+        border-radius: $border-radius;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+
+    input[type="radio"]:checked + .selectable-label,
+    input[type="checkbox"]:checked + .selectable-label {
+        background-color: $input;
+        border-color: $red;
+    }
+}
+
+@media (max-width: 900px) {
+    .form-card {
+        margin: auto;
+        margin-bottom: 4rem;
+        width: 90%;
+        padding: $spacing-high;
+    }
+}

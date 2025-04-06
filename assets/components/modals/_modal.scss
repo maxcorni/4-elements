@@ -1,0 +1,50 @@
+@use "../../abstracts/index" as *;
+
+
+.modal {
+    @include flex (column, center, center);
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $shadow-modal;
+    z-index: 1000;
+
+    .modal-content {
+        @include modal-style();
+        text-align: center;
+    }
+
+    .result {
+        margin: $spacing-low auto;
+        color: $primary;
+        br {
+            margin-bottom: $spacing-low;
+        }
+    
+        span {
+            font-weight: bold;
+        }
+    
+        p {
+            margin-bottom: $spacing-low;
+        }
+    
+        .details {
+            margin-top: $spacing-mid;
+            padding: $spacing-low;
+            border-top: 1px solid $black;
+    
+            .title {
+                font-weight: bold;
+            }
+    
+            .value {
+                color: $primary;
+            }
+        }
+    }
+}
+

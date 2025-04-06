@@ -1,0 +1,11 @@
+@use "../../abstracts/index" as *;
+@use "sass:color";
+
+.secondary-btn {
+    @extend %btn-base;
+    background-color: $secondary;
+    color: $white;
+    &:hover {
+        @include hover-scale($secondary, -10%);
+    }
+}

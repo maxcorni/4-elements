@@ -1,0 +1,112 @@
+@use "../abstracts/index" as *;
+
+
+h1{
+    @include font($font-primary-medium,$font-size-h1);
+}
+
+h2{
+    @include font($font-primary-medium,$font-size-h2);
+}
+
+h3{
+    @include font($font-primary-bold,$font-size-h3);
+}
+
+h4{
+    @include font($font-primary-bold,$font-size-h4);
+}
+
+h5{
+    @include font($font-secondary-bold,$font-size-base);
+}
+
+p{
+    @include font($font-secondary-regular,$font-size-base);
+}
+
+a{
+    @include font($font-secondary-medium,$font-size-base);
+    color: $primary;
+}
+
+span{
+    @include font($font-secondary-bold,$font-size-base);
+    color: $black;
+}
+
+body{
+    background-color: $bg;
+}
+main{
+    margin: $gap 0;
+}
+ul{
+    list-style-type: none ;
+}
+
+.container-full{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.container{
+    width: 80%;
+    margin: $gap auto;
+}
+
+.flex-responsive{
+    @include flex(row, center, space-between);
+    gap: $spacing-high;
+    margin-bottom: $spacing-high;
+}
+
+.col{
+    @include flex(column, stretch, space-between);
+    flex: 1;
+    width: 100%;
+    gap: $spacing-high;
+}
+
+.mobile{
+    display: none;
+}
+
+.content{
+    @include flex(column, start, space-between);
+    gap: $spacing-high;
+}
+
+.fire-cta, .earth-cta, .air-cta, .water-cta{
+    @include flex(column, center, center);
+    width: 80%;
+}
+
+.fire-cta, .earth-cta{
+    margin-left: auto;
+}
+
+@media (max-width: 900px) {
+    .desktop{
+        display: none;
+    }
+
+    .mobile{
+        display: flex; 
+    }
+    .container-full, .container{
+        width: 80%;
+        margin: auto;
+    }
+
+    .flex-responsive{
+        @include flex(column, center, space-between);
+    }
+
+    .fire-cta, .earth-cta, .air-cta, .water-cta{
+        margin: auto;
+    }
+}
+
+
+

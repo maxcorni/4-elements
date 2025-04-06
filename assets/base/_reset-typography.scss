@@ -1,0 +1,8 @@
+@use "../abstracts/index" as *;
+
+body {
+    font-family: $font-secondary-regular;
+    font-size: $font-size-base;
+    color: $primary;
+}
+   

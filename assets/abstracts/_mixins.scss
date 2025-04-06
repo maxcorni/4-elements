@@ -1,0 +1,81 @@
+@use "variables" as *;
+@use "colors" as *;
+@use "typography" as *;
+@use "sass:color";
+
+
+
+// Mixin base grid
+@mixin grid-layout($template-columns, $template-rows, $gap) {
+    display: grid;
+    grid-template-columns: $template-columns;
+    grid-template-rows: $template-rows;
+    gap: $gap;
+    grid-auto-flow: $grid-auto-flow;
+}
+
+//Grid factorisation mixin
+@mixin hotel-section($area-name, $template-areas) {
+    grid-area: #{$area-name};
+    @include grid-layout(1fr 1fr, max-content, 11rem 12.5rem);
+    grid-template-areas: $template-areas;
+}
+
+@mixin info-block($area-name, $rows, $template-areas) {
+    @include grid-layout(1fr, $rows, 2rem 12.5rem);
+    grid-template-areas: $template-areas;
+    grid-area: #{$area-name};
+}
+
+
+@mixin hotel-mobile($area-name, $template-areas) {
+    grid-area: #{$area-name};
+    @include grid-layout(1fr, max-content max-content, 2rem 0);
+    grid-template-areas: $template-areas;
+}
+
+@mixin info-block-mobile($area-name, $template-areas) {
+    @include grid-layout(1fr, max-content max-content max-content, 2rem 0);
+    grid-template-areas: $template-areas;
+    grid-area: #{$area-name};
+}
+
+
+// Mixin display flex
+@mixin flex($flex-direction, $align-items, $justify-content){
+    display: flex;
+    flex-direction: $flex-direction;
+    align-items: $align-items;
+    justify-content: $justify-content;
+}
+  
+// Font Mixin
+@mixin font($font-family, $font-size){
+    font-family: $font-family;
+    font-size: $font-size;
+}
+
+// Boutton extend and mixin
+%btn-base {
+    border: none;
+    padding: 0.7rem 1.4rem;
+    border-radius: $border-radius;
+    cursor: pointer;
+    width: fit-content;
+    font-family: $font-secondary-regular;
+}
+
+@mixin hover-scale($color, $adjustment) {
+    background-color: color.adjust($color, $lightness: $adjustment);
+    scale: 1.1;
+}
+
+// Modal base mixin
+@mixin modal-style() {
+    background-color: $bg;
+    padding: $spacing-mid;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    width: 90%;
+    margin: auto;
+}

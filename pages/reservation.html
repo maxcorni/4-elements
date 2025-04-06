@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Reservation : 4 Elements find the best hotels for your holydays</title>
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <meta name="description" content="Réservez facilement votre séjour avec 4 Elements et découvrez des hôtels uniques inspirés des éléments : Fire, Air, Earth et Water.">
+    <link rel="stylesheet" href="../fonts/styles.css">
+	<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<header>
+    <div class="container-full">
+        <button class="mobile" id="menuBurger"><img src="../assets/images/icon/list.svg" alt="Icon liste menu burger" class="icon-white"></button>
+        <nav>
+            <ul class="flex desktop">
+                <li><a href="../index.html" title="Vers la page home"><img src="../assets/images/logo/logo-noir.png" alt="4 Elements logo black version" class="logo-header"></a></li>
+                <li><a href="hotel-feu.html" title="Vers la page des Hôtels Feu">Feu</a></li>
+                <li><a href="hotel-air.html" title="Vers la page des Hôtels Air">Air</a></li>
+                <li><a href="hotel-terre.html" title="Vers la page des Hôtels Terre">Terre</a></li>
+                <li><a href="hotel-eau.html" title="Vers la page des Hôtels Eau">Eau</a></li>
+            </ul>
+        </nav>
+        <div class="subnav">
+            <ul class="social">
+                <li class="desktop">Contact</li>
+                <li><a href="#" title="Vers la page instagram de 4 Elements" target="_blank"><img src="../assets/images/icon/instagram.svg" alt="instagram icon" class="icon-white"></a></li>
+                <li><a href="#" title="Vers la page facebook de 4 Elements" target="_blank"><img src="../assets/images/icon/facebook.svg" alt="facebook icon" class="icon-white"></a></li>
+            </ul>
+            <ul class="btn-groups desktop">
+                <li><a href="reservation.html" title="Vers la page pour réserver un séjour" class="secondary-btn">Reserver</a></li>
+                <li><a href="#" title="Se connecter à votre compte" class="tertiary-btn">Se connecter</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<main class="form-page">
+	<div class="container">
+        <div class="form-card">
+            <form id="form"> 
+                <div class="flex-responsive">
+                    <div class="col">
+                        <div class="form-item">
+                            <label>Nom:</label>
+                            <input type="text" id="lastname">
+                            <p class="error-message" id="error-lastname"></p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-item">
+                            <label>Prénom:</label>
+                            <input type="text" id="firstname">
+                            <p class="error-message" id="error-firstname"></p>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <fieldset class="form-item">
+                    <legend>Adresse Complètes</legend>
+                    <div class="flex-responsive">
+                        <div class="col">
+                            <label>Numéro :</label>
+                            <input type="number" id="address-number">
+                            <p class="error-message" id="error-number"></p>
+                        </div>
+                        <div class="col">
+                            <label>Adresse :</label>
+                            <input type="text" id="address">
+                            <p class="error-message" id="error-address"></p>
+                        </div>
+                    </div>
+                    <div class="flex-responsive">
+                        <div class="col">
+                            <label>Code postal :</label>
+                            <input type="number" id="postal-code">
+                            <p class="error-message" id="error-postal"></p>
+                        </div>
+                        <div class="col">
+                            <label>Ville :</label>
+                            <input type="text" id="city">
+                            <p class="error-message" id="error-city"></p>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="flex-responsive">
+                    <div class="col">
+                        <div class="form-item">
+                            <label>Email :</label>
+                            <input type="text" id="email">
+                            <p class="error-message" id="error-email"></p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-item">
+                            <label>Téléphone :</label>
+                            <input type="text" id="phone">
+                            <p class="error-message" id="error-phone"></p>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="form-item">
+                    <label>Hôtel :</label>
+                    <select id="logement" name="logement" onchange="toggleOptions()">
+                        <option value="fire">Hôtel Feu</option>
+                        <option value="air">Hôtel Air</option>
+                        <option value="earth">Hôtel Terre</option>
+                        <option value="water">Hôtel Eau</option>
+                    </select>
+                    <p class="error-message" id="error-logement"></p>
+                </div>
+                
+                <fieldset id="options-fire" class="form-item" style="display: none;">
+                    <legend>Les offres de l’hôtel Feu</legend>
+                    <div class="flex-responsive">
+                        <div class="col">
+                            <input type="radio" name="fireOption" id="igloos">
+                            <label for="igloos" class="selectable-label">Igloos</label>
+                        </div>
+                        <div class="col">
+                            <input type="radio" name="fireOption" id="laponieSuite">
+                            <label for="laponieSuite" class="selectable-label">Suite en laponie</label>	
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset id="options-air" class="form-item" style="display: none;">
+                    <legend>Les offres de l’hôtel Air</legend>
+                    <div class="flex-responsive">
+                        <div class="col">
+                            <input type="radio" name="airOption" id="pool">
+                            <label for="pool" class="selectable-label">Avec piscine</label>
+                        </div>
+                        <div class="col">
+                            <input type="radio" name="airOption" id="noPool">
+                            <label for="noPool" class="selectable-label">Sans piscine</label>	
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset id="options-earth" class="form-item" style="display: none;">
+                    <legend>Les offres de l’hôtel Terre</legend>
+                    <div class="flex-responsive">
+                        <div class="col">
+                            <input type="radio" name="=earthOption" id="underground">
+                            <label for="underground" class="selectable-label">Sous Terre</label>
+                        </div>
+                        <div class="col">
+                            <input type="radio" name="earthOption" id="seaView">
+                            <label for="seaView" class="selectable-label">Vue Mer</label>	
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset id="options-water" class="form-item" style="display: none;">
+                    <legend>L'offre de l’hôtel Eau</legend>
+                    <p>Caisson immergé</p>
+                </fieldset>
+
+                <div class="form-item">
+                    <label>Nombre de personnes :</label>
+                    <input type="number" name="personnes" id="personnes">
+                    <p class="error-message" id="error-personnes"></p>
+                </div>
+                
+                <div class="flex-responsive">
+                    <div class="col">
+                        <div class="form-item">
+                            <label>Date d'arrivée :</label>
+                            <input type="date" name="arrivee" id="arrivee">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-item">
+                            <label>Date de départ :</label>
+                            <input type="date" name="depart" id="depart">
+                        </div>
+                    </div>
+                </div>
+                <p class="error-message" id="error-dates"></p>
+                
+                <fieldset class="form-item">
+                    <legend>Services supplémentaires :</legend>
+                    <div class="flex-responsive">
+                        <div>
+                            <input type="checkbox" id="chauffeur" name="services" value="chauffeur">
+                            <label for="chauffeur" class="selectable-label">Chauffeur</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="breakfast" name="services" value="breakfast" onclick="toggleDiet()">
+                            <label for="breakfast" class="selectable-label">Petit-déjeuner</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="dinner" name="services" value="dinner" onclick="toggleDiet()">
+                            <label for="dinner" class="selectable-label">Repas</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="guide" name="services" value="guide">
+                            <label for="guide" class="selectable-label">Visite guidée</label>
+                        </div>
+                    </div>
+                </fieldset>
+                
+                
+                <div id="dietSection" class="form-item" style="display: none;">
+                    <div class="flex-responsive">
+                        <div class="col">
+                            <label>Régime alimentaire :</label>
+                            <select name="regime" id="regime">
+                                <option value="aucun">Aucun</option>
+                                <option value="vegetarien">Végétarien</option>
+                                <option value="vegan">Vegan</option>
+                            </select>
+                            <p class="error-message" id="error-regime"></p>
+                        </div>
+                        <div class="col">
+                            <label>Restriction alimentaire :</label>
+                            <select name="restriction" id="restriction">
+                                <option value="glutenFree">Sans gluten</option>
+                                <option value="lactosesFree">Sans lactoses</option>
+                                <option value="others">autres allergies et intolérances</option>
+                            </select>
+                            <p class="error-message" id="error-restriction"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="primary-btn">Envoyer</button>
+                <button type="reset" id="resetBtn" class="secondary-btn">Reinitialisé</button>
+
+            </form>
+        </div>   
+        <div id="formResult" class="modal">
+            <div class="modal-content">
+                <h2>Résultats</h2>
+                <div class="result" id="result">
+                    <!-- Résultats du formulaire ici -->
+                </div>
+                <button class="primary-btn" id="close">Fermer</button>
+            </div>
+        </div>
+    </div>
+</main>
+<footer>
+	<div class="container-full">
+		<div class="flex-responsive">
+			<div class="col">
+				<a href="../index.html" title="Vers la page home"><img src="../assets/images/logo/logo-noir.png" alt="4 Elements logo black version" class="logo"></a>
+				<p>N’attendez plus pour vivre l’expérience 4 éléments le temps d’une nuit.</p>
+				<ul class="social">
+					<li><a href="#" title="Vers la page instagram de 4 Elements" target="_blank"><img src="../assets/images/icon/instagram.svg" alt="instagram icon" class="icon-white"></a></li>
+					<li><a href="#" title="Vers la page facebook de 4 Elements" target="_blank"><img src="../assets/images/icon/facebook.svg" alt="facebook icon" class="icon-white"></a></li>
+				</ul>
+			</div>
+			<div class="col">
+				<h5>Contact</h5>
+				<ul>
+					<li><strong>Adresse : </strong>8 avenue exemple</li>
+					<li><strong>Ouverture : </strong>Tous les jours de 9h à 20h30</li>
+					<li><strong>Tél : </strong>33 08 280 28002</li>
+				</ul>
+				<a href="reservation.html" title="Vers la page pour réserver un séjour" class="secondary-btn">Reserver en ligne</a>
+			</div>
+			<div class="col">
+				<ul>
+					<li><a href="#" title="Voir les mentions légales">Mentions légales</a></li>
+					<li><a href="#" title="Voir les crédits de la page">Crédits</a></li>
+					<li><a href="#" title="Voir les conditions générales de ventes">CGV</a></li>
+					<li><a href="#" title="voir les conditions de confidentialitées">Confidentialité</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+<div class="menu-burger-overlay">
+    <div class="menu-burger">
+        <button class="close-menu-burger">&times;</button>
+        <nav class="menu-burger-nav">
+            <ul>
+				<li><a href="hotel-feu.html" title="Vers la page des Hôtels Feu">Feu</a></li>
+				<li><a href="hotel-air.html" title="Vers la page des Hôtels Air">Air</a></li>
+				<li><a href="hotel-terre.html" title="Vers la page des Hôtels Terre">Terre</a></li>
+				<li><a href="hotel-eau.html" title="Vers la page des Hôtels Eau">Eau</a></li>
+            </ul>
+        </nav>
+        <div class="menu-burger-btns">
+			<a href="reservation.html" title="Vers la page pour réserver un séjour" class="secondary-btn">Reserver</a>
+			<a href="../index.html" title="Se connecter à votre compte" class="tertiary-btn">Se connecter</a>
+		</div>
+    </div>
+</div>
+<script src="../assets/script/script.js"></script>
+<script src="../assets/script/script-form-reservation.js"></script>
+</body>
+</html>

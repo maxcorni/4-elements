@@ -1,0 +1,27 @@
+
+$grid-template-rows: max-content;
+$grid-auto-flow: row;
+
+$spacing-xs: 0.5rem;
+$spacing-low: 1rem;
+$spacing-mid: 1.5rem; 
+$spacing-high: 2rem;
+$spacing-xl: 3rem;
+$gap: 5rem;
+
+$border-radius: 0.5rem; 
+$border-width: 0.2rem; 
+$box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+
+// z-index
+$z-index-modal: 1000;
+
+// image sizes
+$image-lg-width: 48.8rem;
+$image-lg-height: 62.1rem;
+$image-sm-width: 29.4rem;
+$image-sm-height: 37.4rem;
+$icon-size: 3rem;
+
+$form-padding: 2.4rem 4.5rem;
+$form-margin-bottom: 12rem;

@@ -1,0 +1,161 @@
+@use "../abstracts/index" as *;
+
+.grid {  
+    @include grid-layout(1fr 1fr, max-content max-content max-content max-content max-content max-content, 11rem 12.5rem);
+    grid-auto-columns: max-content;
+    margin: 5rem 0;
+    grid-template-areas:
+        "hotel hotel"
+        "hotel hotel"
+        "hotel hotel"
+        "hotel hotel"
+        "info info"
+        "creator creator";
+}
+
+.hotel {  
+    @include grid-layout(1fr 1fr, max-content max-content max-content max-content, 11rem 12.5rem);
+    grid-template-areas:
+        "fire-hotel fire-hotel"
+        "air-hotel air-hotel"
+        "earth-hotel earth-hotel"
+        "water-hotel water-hotel";
+    grid-area: hotel;
+}
+
+.fire-hotel {
+    @include hotel-section(fire-hotel, "fire-cta fire-anim");
+}
+.air-hotel {
+    @include hotel-section(air-hotel, "air-anim air-cta");
+}
+.earth-hotel {
+    @include hotel-section(earth-hotel, "earth-cta earth-anim");
+}
+.water-hotel {
+    @include hotel-section(water-hotel, "water-anim water-cta");
+}
+.creator {
+    @include hotel-section(creator, "creator-text creator-image");
+}
+.info {
+    @include hotel-section(info, "concept archi");
+}
+.concept {
+    @include info-block(concept, max-content max-content max-content, "concept-title" "concept-image" "concept-text");
+}
+.archi {
+    @include info-block(archi, max-content max-content max-content, "archi-title" "archi-text" "archi-image");
+}
+
+.fire-cta { grid-area: fire-cta; }
+.fire-anim { grid-area: fire-anim; }
+
+.air-cta { grid-area: air-cta; }
+.air-anim { grid-area: air-anim; }
+
+.earth-cta { grid-area: earth-cta; }
+.earth-anim { grid-area: earth-anim; }
+
+.water-anim { grid-area: water-anim; }
+.water-cta { grid-area: water-cta; }
+
+.creator-text { grid-area: creator-text; }
+.creator-image { grid-area: creator-image; }
+
+.concept-title { grid-area: concept-title; }
+.concept-image { grid-area: concept-image; }
+.concept-text { grid-area: concept-text; }
+
+.archi-title { grid-area: archi-title; }
+.archi-text { grid-area: archi-text; }
+.archi-image { grid-area: archi-image; }
+
+.grid {
+    .info {
+        img {
+            width: 100%;
+        }
+    }
+    .creator {
+        .creator-image {
+            img {
+                width: 100%;
+                height: 71.2rem;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .grid {  
+        @include grid-layout(1fr, max-content max-content max-content max-content max-content max-content, 5rem 0);
+        grid-template-areas:
+            "hotel"
+            "hotel"
+            "hotel"
+            "hotel"
+            "info"
+            "creator";
+    }
+
+    .hotel {  
+        @include grid-layout(1fr, max-content max-content max-content max-content, 8rem 0);
+        grid-template-areas:
+            "fire-hotel"
+            "air-hotel"
+            "earth-hotel"
+            "water-hotel";
+    }
+
+    .fire-hotel {
+        @include hotel-mobile(fire-hotel, "fire-anim" "fire-cta");
+    }
+    .air-hotel {
+        @include hotel-mobile(air-hotel, "air-anim" "air-cta");
+    }
+    .earth-hotel {
+        @include hotel-mobile(earth-hotel, "earth-anim" "earth-cta");
+    }
+    .water-hotel {
+        @include hotel-mobile(water-hotel, "water-anim" "water-cta");
+    }
+    .info {
+        @include hotel-mobile(info, "concept" "archi");
+    }
+
+    .concept {
+        @include info-block-mobile(concept, "concept-title" "concept-image" "concept-text");
+    }
+
+    .archi {
+        @include info-block-mobile(archi, "archi-title" "archi-image" "archi-text");
+    }
+
+    .creator {
+        @include info-block-mobile(creator, "creator-title" "creator-image" "creator-text");
+    }
+
+    .creator-title { grid-area: creator-title; }
+
+    .grid {
+        .info {
+            img {
+                margin: auto;
+                width: 100%;
+                height: 33.4rem;
+            }
+        }
+        .creator {
+            .creator-image {
+                img {
+                    margin: auto;
+                    width: 100%;
+                    height: 32rem;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}
