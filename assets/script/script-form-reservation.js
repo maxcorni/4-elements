@@ -1,3 +1,11 @@
+window.onload = function() {
+    toggleOptions(); 
+    preSelectHotelAndOption();
+    toggleDiet();
+};
+
+
+
 // Objectif : L'objectif est de gérer l'affichage et la sélection d'options en fonction du choix d'un logement. 
 // Lorsque l'utilisateur sélectionne un type de logement, les options correspondantes (Fire, Air, Earth, Water) 
 // s'affichent et la première option est automatiquement sélectionnée. Les autres options sont masquées.
