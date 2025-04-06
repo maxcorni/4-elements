@@ -46,7 +46,7 @@ Le projet inclut des fonctionnalités telles que la sélection dynamique d'optio
 2. Installe les dépendances (si tu utilises npm) :
 
     ```bash
-    cd techstock
+    cd 4-elements
     npm install
     ```
 
@@ -57,10 +57,6 @@ Le projet inclut des fonctionnalités telles que la sélection dynamique d'optio
 Voici un aperçu de la structure des dossiers du projet :
 
 ```
-Voici l'arborescence stylisée pour un README, avec les fichiers image et vidéo supprimés, comme demandé :
-
-```markdown
-# Arborescence du projet 4-ELEMENTS
 
 ```
 4-ELEMENTS/
